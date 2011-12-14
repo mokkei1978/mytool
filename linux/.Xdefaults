@@ -1,0 +1,8 @@
+xterm*Foreground:       gray90
+xterm*Background:       gray30
+xterm*geometry:         72x30
+
+Emacs*Foreground:       gray90
+Emacs*Background:       gray30
+Emacs*geometry:         80x35
+

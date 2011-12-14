@@ -1,0 +1,9 @@
+[user]
+	name = ksakamot
+	email = ksakamot@mri-jma.go.jp
+[core]
+	editor = emacs
+[alias]
+	co = checkout
+	st = status
+	br = branch
