@@ -1,6 +1,6 @@
 #/bin/bash
 
-repos="MXE CORE2jpn rectangle MRICOM3"
+repos="MXE CORE2jpn rectangle MRICOM3 seto mytool"
 
 
 
