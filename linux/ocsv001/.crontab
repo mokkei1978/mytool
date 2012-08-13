@@ -1,0 +1,1 @@
+41 2 * * * sh ~/mytool/backup/cron-host.sh > ~/backup/cron.out 2> ~/backup/cron.err

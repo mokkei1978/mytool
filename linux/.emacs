@@ -46,6 +46,8 @@
 ;;; Hide toolbar ( M-x tool-bar-mode to swicth )
 (tool-bar-mode -1)
 
+(setq inhibit-startup-message t)
+
 (set-default-font "-adobe-courier-medium-r-normal--17-120-100-100-m-100-iso8859-1")
 
 
