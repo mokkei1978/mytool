@@ -1,1 +1,7 @@
-41 2 * * * sh ~/mytool/backup/cron-host.sh > ~/backup/cron.out 2> ~/backup/cron.err
+HOME=/home/ksakamot
+
+41 2 * * * sh ~/mytool/backup/cron-host.sh > ~/temp/cron-backup-out.txt 2> ~/temp/cron-backup-err.txt
+1,11,21,31,41,51 * * * * sh ~/mytool/linux/gather_stats.sh > ~/temp/cron-stats-out.txt 2> ~/temp/cron-stats-err.txt
+33 * * * * sh ~/mytool/linux/ocsv001/cron_copy-CORE2jpn.sh > ~/temp/cron-CORE2jpn-out.txt 2> ~/temp/cron-CORE2jpn-err.txt
+
+
