@@ -3,8 +3,7 @@
 
 cd ~/mytool/backup/
 
-sh stat.sh "Backup start." backup.txt
-
+(cd ../linux; ./print.sh "Backup start.")
 
 echo "Sync Git..."
 sh backup_git.sh
@@ -14,8 +13,7 @@ sh backup_git.sh
 echo "Backup Redmine..."
 sh backup_redmine.sh
 
-
-sh stat.sh "Backup end." backup.txt
+(cd ../linux; ./print.sh "Backup end.")
 
 exit 0
 

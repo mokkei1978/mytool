@@ -1,11 +1,9 @@
 #/bin/bash
 
 
-date > ./backup.date
-
-
 cd ~/mytool/backup/
 
+(cd ../linux; ./print.sh "Backup start.")
 
 echo "Sync Wiki..."
 rsync -a ocsv001:/home/ocpublic/public_html/wiki  ~/backup/
@@ -21,6 +19,8 @@ rsync -a ocsv001:~/backup/redmine ~/backup/
 
 echo "Sync html..."
 rsync -a ocsv001:~/public_html  ~/backup/
+
+(cd ../linux; ./print.sh "Backup end.")
 
 exit 0
 
