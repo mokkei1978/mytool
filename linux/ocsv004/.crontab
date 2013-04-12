@@ -1,1 +1,0 @@
-37 3 * * * sh ~/mytool/backup/cron.sh > ~/backup/cron.out 2> ~/backup/cron.err
