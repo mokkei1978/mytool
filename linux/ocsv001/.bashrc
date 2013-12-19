@@ -38,4 +38,5 @@ export LM_LICENSE_FILE=$PGI/license.dat
 export GASCRP="./libgs ./mylib"
 
 alias emacssjis='env LANG=ja_JP.SJIS emacs'
-
+alias df='df -h'
+alias dias='ssh sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp'

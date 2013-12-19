@@ -63,3 +63,10 @@
                         f90-font-lock-keywords f90-font-lock-keywords-4
                   )))
 (add-to-list 'auto-mode-alist '("\\.F90\\'" . f90-mode))
+
+;; C-x bでミニバッファにバッファ候補を表示
+(iswitchb-mode t)
+(iswitchb-default-keybindings)
+
+;; C-kで行全体を削除
+(setq kill-whole-line t)
