@@ -3,14 +3,20 @@
 
 set -e
 
+dir=mri.com-user
+#dir="."
+current_dir=`pwd`
+
+
 #- Get file names.
 cd /home/ocpublic/public_html/wiki/data/pages
-files=`find . -name "*.txt"`
+files=`find ${dir} -name "*.txt"`
 
 
 
 #- Download html pages.
 cd ~/public_html/temp
+rm -rf html
 mkdir -p html
 
 for file in ${files}; do
@@ -33,6 +39,10 @@ done
 #- Change HTML links.
 sed -i -e 's@href="\([^=]\+=\)\([^"]\+"\)@href="./\2.html@g' -e 's@".html@.html"@g' html/*.html
 
+#- Change link rel
+sed -i "/<link rel=/d" html/*.html
+sed -i -e '12i <link rel="stylesheet" type="text/css" href="standard.css">' html/*.html
+
 #- Remove ":"
 cd html
 files=`ls .`
@@ -41,5 +51,13 @@ for file in ${files}; do
   mv ${file} ${file//\:/_} || :
 done
 
+ln -s ${dir}_start.html index.html
+cp ${current_dir}/standard.css .
+cd ..
+zip html.zip html/*
+rm -rf ${dir}
+mv html ${dir}
+
+echo "Make ~/public/temp/html.zip and ${dir}/index.html"
 
 exit 0

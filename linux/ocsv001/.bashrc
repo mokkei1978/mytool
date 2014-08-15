@@ -40,3 +40,7 @@ export GASCRP="./libgs ./mylib"
 alias emacssjis='env LANG=ja_JP.SJIS emacs'
 alias df='df -h'
 alias dias='ssh sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp'
+alias front='ssh -Y front1'
+alias fx10='ssh -Y c24088@oakleaf-fx.cc.u-tokyo.ac.jp'
+
+export PS1="\[\e[1;32m\]\w>\[\e[00m\] "
