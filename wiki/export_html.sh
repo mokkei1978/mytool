@@ -15,7 +15,7 @@ files=`find ${dir} -name "*.txt"`
 
 
 #- Download html pages.
-cd ~/public_html/temp
+cd ~/public_html/dias
 rm -rf html
 mkdir -p html
 
@@ -36,28 +36,32 @@ for file in ${files}; do
 
 done
 
-#- Change HTML links.
-sed -i -e 's@href="\([^=]\+=\)\([^"]\+"\)@href="./\2.html@g' -e 's@".html@.html"@g' html/*.html
+#- Change internal links.
+sed -i -e '/wikilink/s@\#\([^\"]*\)\"@\"\#\1@g' html/*.html
+sed -i -e '/wikilink/s@href="\([^=]\+=\)\([^"]\+"\)@href="./\2.html@g' -e 's@".html@.html"@g' html/*.html
+sed -i -e '/wikilink/s@\"\#\([^ ]*\)@\#\1\"@g' html/*.html
 
 #- Change link rel
 sed -i "/<link rel=/d" html/*.html
 sed -i -e '12i <link rel="stylesheet" type="text/css" href="standard.css">' html/*.html
+sed -i -e '20i <div class="level1"><a href="index.html">MRI.COM</a></div>' html/*.html
 
 #- Remove ":"
 cd html
 files=`ls .`
 for file in ${files}; do
-  sed -i -e "s/\:/_/g" -e "s/http_/http\:/g" -e "s/xml_lang/xml:lang/g" ${file}
+  sed -i -e "/wikilink/s/\:/_/g" -e "s/http_/http\:/g" -e "s/xml_lang/xml:lang/g" ${file}
   mv ${file} ${file//\:/_} || :
 done
 
 ln -s ${dir}_start.html index.html
 cp ${current_dir}/standard.css .
+cp ${current_dir}/link_icon.gif .
 cd ..
-zip html.zip html/*
-rm -rf ${dir}
-mv html ${dir}
+#zip html.zip html/*
 
-echo "Make ~/public/temp/html.zip and ${dir}/index.html"
+echo "Make http://ocsv001/~ksakamot/dias/html/index.html"
+
+rsync -a html/ sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp:~/html/
 
 exit 0
