@@ -1,10 +1,10 @@
 #/bin/bash
 
-org=ocsv005:/work4/ksakamot/mxe
-copy1=/work4/ksakamot/
 
-
-rsync -rLptgoD ${org} ${copy1}/
-rsync -a ${copy1}/mxe ocsv011:/work112/ksakamot/
+rsync -a ocsv001:/worka/ocpublic/mxe-data ~/DATA/
+rsync -a ocsv001:/worka/ksakamot/modis ~/DATA/
+rsync -a ocsv001:/worka/ksakamot/CORE2jpn/data ~/DATA/CORE2jpn/
+rsync -a ocsv001:/worka/ksakamot/rectangle/data ~/DATA/rectangle/
+rsync -a ocsv001:/worka/ksakamot/seto/data ~/DATA/seto/
 
 

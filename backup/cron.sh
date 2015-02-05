@@ -1,9 +1,10 @@
 #/bin/bash
 
+set -e
 
 cd ~/mytool/backup/
 
-(cd ../linux; ./print.sh "Backup start.")
+(cd ../linux; ./print-remote.sh "Backup start.")
 
 echo "Sync Wiki..."
 rsync -a ocsv001:/home/ocpublic/public_html/wiki  ~/backup/
@@ -11,16 +12,13 @@ rsync -a ocsv001:/home/ocpublic/public_html/wiki  ~/backup/
 echo "Sync Git..."
 sh backup_git.sh
 
-#sh backup_mxedata.sh
-#echo " MXE data"
-
-echo "Sync Redmine..."
-rsync -a ocsv001:~/backup/redmine ~/backup/
+echo "Copy data..."
+sh backup_data.sh
 
 echo "Sync html..."
 rsync -a ocsv001:~/public_html  ~/backup/
 
-(cd ../linux; ./print.sh "Backup end.")
+(cd ../linux; ./print-remote.sh "Backup end.")
 
 exit 0
 

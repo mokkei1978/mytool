@@ -1,0 +1,12 @@
+xterm*Foreground:       gray90
+xterm*Background:       gray30
+xterm*geometry:         72x30
+
+UXTerm*faceName:            Dejavu Sans mono:style=book
+UXTerm*faceNameDoublesize:  IPAGothic:style=Regular
+UXTerm*faceSize:            11
+
+Emacs*Foreground:       gray90
+Emacs*Background:       gray30
+Emacs*geometry:         80x35
+
