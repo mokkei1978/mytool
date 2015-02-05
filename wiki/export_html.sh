@@ -29,7 +29,8 @@ for file in ${files}; do
   *%*) ;;
   *)
     doku='doku.php?do=export_html&id='${file}
-    wget --no-verbose 'http://ocsv001/~ocpublic/wiki/'${doku}
+    wget --no-verbose 'http://localhost/~ocpublic/wiki/'${doku}
+#    wget 'http://localhost/~ocpublic/wiki/'${doku}
     mv ${doku} html/${file}.html
     ;;
   esac
