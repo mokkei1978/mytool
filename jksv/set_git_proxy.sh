@@ -12,18 +12,14 @@ while getopts j option ; do
 done
 shift `expr $OPTIND - 1`
 
-proxy=`git config --list --global | grep http.proxy` && :
+#proxy=`git config --list --global | grep http.proxy` && :
 
 if ${jksv}; then
-  if [ "${proxy}" = "" ]; then
-    git config --global http.proxy http://172.31.146.1:8080
-    echo "git config --global http.proxy http://172.31.146.1:8080"
-  fi
+  git config --global http.proxy http://172.31.146.1:8080
+  echo "git config --global http.proxy http://172.31.146.1:8080"
 else
-  if [ "${proxy}" != "" ]; then
-    git config --unset --global http.proxy
-    echo "git config --unset --global http.proxy"
-  fi
+  git config --global http.proxy http://proxy.mri-jma.go.jp:8080
+  echo "git config --global http.proxy http://proxy.mri-jma.go.jp:8080"
 fi
 
 exit 0

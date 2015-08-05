@@ -34,13 +34,16 @@ export PATH=$PGI/linux86-64/2011/mpi/mpich/bin:$PATH
 export MANPATH=$MANPATH:$PGI/linux86-64/2011/man
 export LM_LICENSE_FILE=$PGI/license.dat
 
+#- netCDF
+export PATH=/usr/local/netcdf/bin:$PATH
+
 #- GrADS scrpit path
 export GASCRP="./libgs ./mylib"
 
 alias emacssjis='env LANG=ja_JP.SJIS emacs'
 alias df='df -h'
 alias dias='ssh sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp'
-alias front='ssh -Y front1'
+alias front='ssh -Y front'
 alias fx10='ssh -Y c24146@oakleaf-fx.cc.u-tokyo.ac.jp'
 
 export PS1="\[\e[1;32m\]\w>\[\e[00m\] "
