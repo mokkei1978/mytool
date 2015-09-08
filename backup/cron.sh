@@ -4,7 +4,7 @@ set -e
 
 cd ~/mytool/backup/
 
-(cd ../linux; ./print-remote.sh "Backup start.")
+#(cd ../linux; ./print-remote.sh "Backup start.")
 
 echo "Sync Wiki..."
 rsync -a ocsv001:/home/ocpublic/public_html/wiki  ~/backup/
