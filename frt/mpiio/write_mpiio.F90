@@ -1,11 +1,14 @@
 program main
-  use mpi
+!  use mpi  !- mpi_file_write_all does not match
   implicit none
 
-!#include <mpif.h>
+#include <mpif.h>
 
-  integer,parameter :: npartx = 2, nparty = 2
-  integer,parameter :: dimx = 1024, dimy = 512, dimz = 240
+!  integer,parameter :: npartx = 32, nparty = 12
+  integer,parameter :: npartx = 64, nparty = 24
+  integer,parameter :: dimx = 1024, dimy = 576, dimz = 240
+
+  integer,parameter :: mloop = 6
 
   integer :: type_file2d, type_file3d
   integer :: ierr, npe, ipe
@@ -15,7 +18,7 @@ program main
 
   real(8) :: a(isize,jsize,ksize)
 
-  integer :: handle, i, j, k
+  integer :: handle, i, j, k, m
   integer(1) :: buffer(8,isize*jsize*ksize)
   integer(1) :: tmp(8)
 
@@ -53,6 +56,8 @@ program main
     !出力データをbyte arrayにパック, native_little_endianならエンディアン変換
     !buffer = transfer( a(1:isize, 1:jsize, 1:ksize), buffer )
 
+do m = 1, mloop
+
     do k = 1, ksize
       do j = 1, jsize
         do i = 1, isize
@@ -70,17 +75,19 @@ program main
     !END DO
     !END IF
 
-    call mpi_file_write_all( handle, buffer(1,1), isize*jsize*ksize*8, MPI_BYTE, MPI_STATUSES_IGNORE, ierr )
+    call mpi_file_write_all( handle, buffer, isize*jsize*ksize*8, MPI_BYTE, MPI_STATUSES_IGNORE, ierr )
 !    write(6,*) 'write 1:',ipe
 
 !    call mpi_file_write_all( handle, buffer(1,1), isize*jsize*ksize*8, MPI_BYTE, MPI_STATUSES_IGNORE, ierr )
 !    write(6,*) 'write 2:',ipe
 
+enddo
+
     call mpi_file_close(handle, ierr)
 
   else
 
-    PRINT "cannot open file"
+    write(6,*) "cannot open file"
 
   endif
 
