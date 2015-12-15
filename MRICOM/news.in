@@ -1,0 +1,19 @@
+MRI.COM ver.@version@ のリリース
+
+
+MRI.COM ver.4.0, 4.1を更新しました。
+
+更新内容は、"リリースノート":http://ocsv001.mri-jma.go.jp/~ocpublic/wiki/doku.php?id=mri.com-user:release-note&#ver@version_wiki@_@date_wiki@ または、"Redmineロードマップ":http://jksv-pj.npd.naps.kishou.go.jp/redmine/ocean/versions/@roadmap@ を参照してください。
+
+ソースコードは以下から取得できます。
+
+* git: http://jksv-pj.npd.naps.kishou.go.jp/git_repos/ocean/mricom タグ: MRICOM-@version_tag@-@date@
+* tar ball: front:/home/ocpublic/MRICOM/MRICOM-@version_tag@-@date@.tgz
+
+
+
+
+MRI.COM ver.@version@ をリリースしました。
+
+* 全ての提供物 [[Wiki]] を更新
+

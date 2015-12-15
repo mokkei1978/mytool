@@ -37,6 +37,10 @@ export LM_LICENSE_FILE=$PGI/license.dat
 #- netCDF
 export PATH=/usr/local/netcdf/bin:$PATH
 
+#- OpenMPI
+export PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/bin:$PATH
+export LD_LIBRARY_PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/lib:$LD_LIBRARY_PATH
+
 #- GrADS scrpit path
 export GASCRP="./libgs ./mylib"
 
@@ -47,3 +51,8 @@ alias front='ssh -Y front'
 alias fx10='ssh -Y c24146@oakleaf-fx.cc.u-tokyo.ac.jp'
 
 export PS1="\[\e[1;32m\]\w>\[\e[00m\] "
+
+#- IDL licence
+#/usr/local/exelis/envi51/bin/envi-setup.bash
+/usr/local/exelis/idl83/bin/idl_setup.bash
+export LM_LICENSE_FILE="1700@grsv.mri-jma.go.jp:17000@ldapsv1.mri-jma.go.jp:17000@ldapsv2.mri-jma.go.jp"

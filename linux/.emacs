@@ -66,7 +66,7 @@
 
 ;; C-x bでミニバッファにバッファ候補を表示
 (iswitchb-mode t)
-(iswitchb-default-keybindings)
+;(iswitchb-default-keybindings)
 
 ;; C-kで行全体を削除
 (setq kill-whole-line t)

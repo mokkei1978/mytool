@@ -1,0 +1,33 @@
+MRI.COM の更新 (@year@年@month@月分)
+
+MRI.COMユーザーの皆さま
+
+MRI.COM ver.@version@ をリリースしました。
+更新内容についてはリリースノートを
+http://ocsv001.mri-jma.go.jp/~ocpublic/wiki/doku.php?id=mri.com-user:release-note&#ver@version_wiki@_@date_wiki@
+ソースコードの取得についてはRedmineニュースを参照ください。
+http://jksv-pj.npd.naps.kishou.go.jp/redmine/ocean/news/@news@
+
+坂本圭
+気象研究所 海洋・地球化学研究部
+内線 453
+ksakamot@mri-jma.go.jp
+
+
+皆さま
+
+気象研の坂本です。
+DIASに提供しているMRI.COMパッケージを更新しました。
+
+更新内容についてはリリースノートを
+http://dias.tkl.iis.u-tokyo.ac.jp/OGCM-dev/j7rOMs4s/html/mri.com-user_release-note.html#ver@version_wiki@_@date_wiki@
+ソースコードの取得についてはDIAS Redmineを参照ください。
+http://dand056-redmine.tkl.iis.u-tokyo.ac.jp/projects/mri/wiki/Wiki
+
+よろしくお願いします。
+
+坂本圭
+気象研究所 海洋・地球化学研究部
+ksakamot@mri-jma.go.jp
+029-853-8653
+http://researchmap.jp/keisakamoto/
