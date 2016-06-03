@@ -10,3 +10,5 @@
   1. make_release.sh
   2. cd ~/rectangle/ ; tag_package.sh
 
+
+  1. update_dias.sh
