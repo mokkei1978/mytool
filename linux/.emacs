@@ -70,3 +70,4 @@
 
 ;; C-kで行全体を削除
 (setq kill-whole-line t)
+

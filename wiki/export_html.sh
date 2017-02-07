@@ -15,7 +15,7 @@ files=`find ${dir} -name "*.txt"`
 
 
 #- Download html pages.
-cd ~/public_html/dias
+cd ~/public_html/html_mricom
 rm -rf html
 mkdir -p html
 
@@ -61,8 +61,8 @@ cp ${current_dir}/link_icon.gif .
 cd ..
 #zip html.zip html/*
 
-echo "Make http://ocsv001/~ksakamot/dias/html/index.html"
+echo "Make http://ocsv001/~ksakamot/html_mricom/html/index.html"
 
-rsync -a html/ sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp:~/html/
+#rsync -a html/ sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp:~/html/
 
 exit 0

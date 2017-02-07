@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if git-rev-parse --verify HEAD >/dev/null 2>&1
+if git rev-parse --verify HEAD >/dev/null 2>&1
 then
   against=HEAD
 else
@@ -8,12 +8,10 @@ else
   against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
 fi
 
-
 #- Remove trailing whitespace.
 #-   http://qiita.com/k0kubun/items/8f6d7eded1d833187449
 
-for diff in `git diff-index --check --cached $against -- |
-  grep 'trailing whitespace' | sed 's/: trailing whitespace.//'`
+for diff in `git diff-index --check --cached $against -- | grep 'trailing whitespace' | sed 's/: trailing whitespace.//'`
 do
   file=`echo "$diff" | sed 's/:[^:]*$//'`
   line=`echo "$diff" | sed 's/^[^:]*://'`
