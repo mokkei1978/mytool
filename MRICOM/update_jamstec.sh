@@ -11,7 +11,7 @@ date=$2
 cd ~/mytool/wiki
 sh export_html.sh
 cd ~/public_html/html_mricom
-git add -u .
+git add -A .
 git commit -m "${date}"
 git push jamstec master
 
