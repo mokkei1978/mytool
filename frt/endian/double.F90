@@ -1,18 +1,15 @@
 program main
   implicit none
 
-  integer(4) :: x = 1
-  integer(1) :: y1(4)
-  integer(2) :: y2(2)
+  real(8) :: x = 0.d0
+  integer(1) :: y1(8)
 
+  x = sqrt( -1.d0 )
   y1 = transfer( x, y1 )
-  y2 = transfer( x, y2 )
 
   write(*,*) x
   write(*,*) y1
-  write(*,*) y2
   write(*,'(z255)') x
   write(*,'(z255)') y1
-  write(*,'(z255)') y2
 
 end program
