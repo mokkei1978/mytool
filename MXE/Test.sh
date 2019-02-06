@@ -2,18 +2,20 @@
 
 (cd setting; ./print.sh "Unit test start.")
 
+#module load pgi_netcdf
+
 cd prep
-sh test/test.sh
+make check
 if [ $? -ne 0 ]; then
-  (cd ../setting; ./print.sh "Unit test fail.")
-  exit 1
+    (cd ../setting; ./print.sh "Unit test fail.")
+    exit 1
 fi
 
 cd ../anl
-sh test/test.sh
+make check
 if [ $? -ne 0 ]; then
-  (cd ../setting; ./print.sh "Unit test fail.")
-  exit 1
+    (cd ../setting; ./print.sh "Unit test fail.")
+    exit 1
 fi
 
 (cd ../setting; ./print.sh "Unit test succeed.")

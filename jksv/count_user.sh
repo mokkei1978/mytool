@@ -15,6 +15,9 @@ rm -f activity
 wget http://jksv-pj.npd.naps.kishou.go.jp/redmine/${sysname}/${page}
 
 grep "mri-jma" member/${sysname}.tbl > temp.tbl
+
+grep "konogi" member/${sysname}.tbl >> temp.tbl
+
 awk '{OFS="\t"}{print $2,$3 }' temp.tbl > temp2.tbl
 
 while read name1 name2; do

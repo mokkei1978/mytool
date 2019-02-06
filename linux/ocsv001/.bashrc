@@ -28,33 +28,46 @@
 test -s ~/.alias && . ~/.alias || true
 
 #PGI Compiler 
-export PGI=/opt/pgi
-export PATH=$PGI/linux86-64/2011/bin:$PATH
-export PATH=$PGI/linux86-64/2011/mpi/mpich/bin:$PATH
-export MANPATH=$MANPATH:$PGI/linux86-64/2011/man
-export LM_LICENSE_FILE=$PGI/license.dat
+#export PGI=/opt/pgi
+#export PATH=$PGI/linux86-64/2011/bin:$PATH
+#export PATH=$PGI/linux86-64/2011/mpi/mpich/bin:$PATH
+#export MANPATH=$MANPATH:$PGI/linux86-64/2011/man
+#export LM_LICENSE_FILE=$PGI/license.dat
 
 #- netCDF
-export PATH=/usr/local/netcdf/bin:$PATH
+#export PATH=/usr/local/netcdf/bin:$PATH
 
 #- OpenMPI
-export PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/bin:$PATH
-export LD_LIBRARY_PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/lib:$LD_LIBRARY_PATH
+#export PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/bin:$PATH
+#export LD_LIBRARY_PATH=/opt/pgi/linux86-64/2011/mpi/openmpi-1.4.3/lib:$LD_LIBRARY_PATH
 
 #- GrADS scrpit path
 export GASCRP="./libgs ./mylib"
 
-alias emacssjis='env LANG=ja_JP.SJIS emacs'
 alias df='df -h'
 alias dias='ssh sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp'
 alias front='ssh -Y front'
-alias fx10='ssh -Y c24146@oakleaf-fx.cc.u-tokyo.ac.jp'
-alias ocsv007='ssh -Y ocsv007'
-alias x='uxterm &'
+alias ogsv007='ssh -Y ocsv007'
+alias x='xterm &'
+alias ls='ls --color=auto'
+alias ll='ls -l'
 
 export PS1="\[\e[1;32m\]\w>\[\e[00m\] "
 
 #- IDL licence
 #/usr/local/exelis/envi51/bin/envi-setup.bash
-/usr/local/exelis/idl83/bin/idl_setup.bash
-export LM_LICENSE_FILE="1700@grsv.mri-jma.go.jp:17000@ldapsv1.mri-jma.go.jp:17000@ldapsv2.mri-jma.go.jp"
+#/usr/local/exelis/idl83/bin/idl_setup.bash
+#export LM_LICENSE_FILE="1700@grsv.mri-jma.go.jp:17000@ldapsv1.mri-jma.go.jp:17000@ldapsv2.mri-jma.go.jp"
+
+eval $(dircolors -b ~/.dir_colors)
+
+module load pgi_netcdf
+
+#- Python 3.6.5
+export PATH=/home/ksakamot/lib/python3.6.5/bin:/home/ksakamot/lib/geos-3.3.3/bin$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ksakamot/lib/google-cloud-sdk/path.bash.inc' ]; then source '/home/ksakamot/lib/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ksakamot/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/home/ksakamot/lib/google-cloud-sdk/completion.bash.inc'; fi
