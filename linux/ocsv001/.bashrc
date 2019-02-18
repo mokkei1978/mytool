@@ -64,7 +64,7 @@ eval $(dircolors -b ~/.dir_colors)
 module load pgi_netcdf
 
 #- Python 3.6.5
-export PATH=/home/ksakamot/lib/python3.6.5/bin:/home/ksakamot/lib/geos-3.3.3/bin$PATH
+export PATH=/home/ksakamot/lib/python3.6.5/bin:/home/ksakamot/lib/geos-3.3.3/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ksakamot/lib/google-cloud-sdk/path.bash.inc' ]; then source '/home/ksakamot/lib/google-cloud-sdk/path.bash.inc'; fi
