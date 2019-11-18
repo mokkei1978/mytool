@@ -1,0 +1,443 @@
+
+#-- Barotropic snap shot (30min) --
+
+&nml_history
+  name                          = 'sea surface height',
+  file_base                     = '../hst_30min-jpn/hs_snp_ssh',
+  interval_step                 = 10,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+&nml_history
+  name                          = 'x transport',
+  file_base                     = '../hst_30min-jpn/hs_snp_um',
+  interval_step                 = 10,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+&nml_history
+  name                          = 'y transport',
+  file_base                     = '../hst_30min-jpn/hs_snp_vm',
+  interval_step                 = 10,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+
+
+### UV at surface (snap) (30min)
+
+&nml_history
+  name                          = 'x velocity',
+  file_base                     = '../hst_30min-jpn/hs_u_surf_snp',
+  interval_step                 = 10,
+  klast                         = 1,
+  sampling                      = 'snap',
+/
+&nml_history
+  name                          = 'y velocity',
+  file_base                     = '../hst_30min-jpn/hs_v_surf_snp',
+  interval_step                 = 10,
+  klast                         = 1,
+  sampling                      = 'snap',
+/
+
+#-- SSS (snap) (30min) --
+
+&nml_history
+  name                          = 'salinity',
+  file_base                     = '../hst_30min-jpn/hs_sss_snp',
+  interval_step                 = 10,
+  klast                         = 1,
+  sampling                      = 'snap',
+/
+
+### SST (snap) (30min)
+
+&nml_history
+  name                          = 'temperature',
+  file_base                     = '../hst_30min-jpn/hs_sst_snp',
+  interval_step                 = 10,
+  klast                         = 1,
+  sampling                      = 'snap',
+/
+
+
+### sea level pressure (snap) (30min)
+
+&nml_history
+  name                          = 'sea level pressure',
+  file_base                     = '../hst_30min-jpn/hs_slp_snp',
+  interval_step                 = 10,
+  sampling                      = 'snap',
+  suffix                        = 'day',
+/
+
+
+### SSH snap time series at tidegauges (hour)
+
+&nml_history
+  name                          = 'sea surface height',
+  file_base                     = '../hst_hour-jpn/hs_tidegauge',
+  interval_step                 = 20,
+  sampling                      = 'snap',
+  suffix                        = 'day',
+  file_stations_csv             = 'nml_monitor/tidegauge.csv',
+/
+&nml_history
+  name                          = 'sea level pressure',
+  file_base                     = '../hst_hour-jpn/hs_slp_tidegauge',
+  interval_step                 = 20,
+  sampling                      = 'snap',
+  suffix                        = 'day',
+  file_stations_csv             = 'nml_monitor/tidegauge.csv',
+/
+
+#-- Barotropic snap shot (hour) --
+
+&nml_history
+  name                          = 'sea surface height',
+  file_base                     = '../hst_hour-jpn/hs_snp_ssh',
+  interval_step                 = 20,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+&nml_history
+  name                          = 'x transport',
+  file_base                     = '../hst_hour-jpn/hs_snp_um',
+  interval_step                 = 20,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+&nml_history
+  name                          = 'y transport',
+  file_base                     = '../hst_hour-jpn/hs_snp_vm',
+  interval_step                 = 20,
+  suffix                        = 'day',
+  sampling                      = 'snap',
+/
+
+
+### dynamic height (snap) (hour)
+
+&nml_history
+  name                          = 'dynamic height',
+  file_base                     = '../hst_hour-jpn/hs_dyn_height_1m',
+  interval_step                 = 20,
+  sampling                      = 'snap',
+  suffix                        = 'day',
+  klast                         = 1,
+/
+
+&nml_history
+  name                          = 'dynamic height',
+  file_base                     = '../hst_hour-jpn/hs_dyn_height_2000m',
+  interval_step                 = 20,
+  sampling                      = 'snap',
+  suffix                        = 'day',
+  kfirst                        = 48,
+  klast                         = 48,
+/
+
+### Basic variables (mean) (day)
+
+&nml_history
+  name                          = 'temperature',
+  file_base                     = '../hst_day-jpn/hs_t',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'salinity',
+  file_base                     = '../hst_day-jpn/hs_s',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'x velocity',
+  file_base                     = '../hst_day-jpn/hs_u',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'y velocity',
+  file_base                     = '../hst_day-jpn/hs_v',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sea surface height',
+  file_base                     = '../hst_day-jpn/hs_ssh',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'x transport',
+  file_base                     = '../hst_day-jpn/hs_um',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'y transport',
+  file_base                     = '../hst_day-jpn/hs_vm',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+
+
+#-- Vertical mixing (mean) (day) --
+
+&nml_history
+  name                          = 'Ocean vertical tracer diffusivity',
+  file_base                     = '../hst_day-jpn/hs_avd',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'Ocean vertical momentum diffusivity',
+  file_base                     = '../hst_day-jpn/hs_avm',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+
+### Sea ice (mean) (day)
+
+&nml_history
+  name                          = 'sea ice basic state vars at t-point',
+  file_base                     = '../hst_day-jpn/hs_ice_state',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sea ice state vars at t-point',
+  file_base                     = '../hst_day-jpn/hs_ice_state2',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sea ice state vars of each category at t-point',
+  file_base                     = '../hst_day-jpn/hs_ice_categ',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sea ice basic dynamics at u-point',
+  file_base                     = '../hst_day-jpn/hs_ice_dyn',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sea ice production rate',
+  file_base                     = '../hst_day-jpn/hs_ice_prod',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+
+#-- sea surface forcing (mean) (day) --
+
+&nml_history
+  name                          = 'wind and ice stress',
+  file_base                     = '../hst_day-jpn/hs_wind',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'water precipitation flux',
+  file_base                     = '../hst_day-jpn/hs_w_prcp',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'water evaporation flux',
+  file_base                     = '../hst_day-jpn/hs_w_evap',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'water flux from rivers',
+  file_base                     = '../hst_day-jpn/hs_w_river',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'water flux from sea ice',
+  file_base                     = '../hst_day-jpn/hs_w_ice',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'total salt flux',
+  file_base                     = '../hst_day-jpn/hs_salt_flx',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'net longwave flux',
+  file_base                     = '../hst_day-jpn/hs_h_long',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'net shortwave flux',
+  file_base                     = '../hst_day-jpn/hs_h_short',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'latent heat flux',
+  file_base                     = '../hst_day-jpn/hs_h_latent',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sensible heat flux',
+  file_base                     = '../hst_day-jpn/hs_h_sensible',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+
+#-- Geostrophic velocity (mean) (day) --
+
+&nml_history
+  name                          = 'sfc geostrophic x velocity',
+  file_base                     = '../hst_day-jpn/hs_sfc_geostr_u',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sfc geostrophic y velocity',
+  file_base                     = '../hst_day-jpn/hs_sfc_geostr_v',
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sfc geostrophic x velocity',
+  file_base                     = '../hst_day-jpn/hs_sfc_geostr_u2',
+  operator                      = 'square'
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+&nml_history
+  name                          = 'sfc geostrophic y velocity',
+  file_base                     = '../hst_day-jpn/hs_sfc_geostr_v2',
+  operator                      = 'square'
+  interval_step                 = 480,
+  suffix                        = 'day',
+/
+
+
+### Relative vorticity at surface (snap) (day)
+
+&nml_history
+  name                          = 'relative vorticity',
+  file_base                     = '../hst_day-jpn/hs_vort_surf_snp',
+  interval_step                 = 480,
+  klast                         = 1,
+  sampling                      = 'snap',
+/
+
+
+### Steric height averaged in JPN (day)
+
+&nml_history
+  name                          = 'local steric sea level',
+  file_base                     = '../hst_day-jpn/hs_steric_h',
+  interval_step                 = 480,
+  suffix                        = 'day',
+  operator                      = 'area_average',
+  file_mask_2d                  = '../data-jpn/mask_sub_ubnd_t.d'
+/
+
+### Strait transport for JPN model (mean) (day)
+
+&nml_history
+  name                          = 'resolved volume x transport',
+  file_base                     = '../hst_day-jpn/hs_Tsugaru',
+  interval_step                 = 480,
+  operator                      = 'sum_3d',
+  suffix                        = 'day',
+  horz_range%ifirst             = 773,
+  horz_range%ilast              = 773,
+  horz_range%jfirst             = 1065,
+  horz_range%jlast              = 1078,
+  grads%xdef                    = '1 LEVELS 0.00'
+  grads%ydef                    = '1 LEVELS 0.00'
+  grads%zdef                    = '1 LEVELS 0.00'
+  factor                        = 1.d-12,
+  unit                          = 'Sv'
+  standard_name                 = 'Tsugaru Strait volume tranposrt (eastward)',
+  short_name                    = 'tsugaru',
+/
+
+&nml_history
+  name                          = 'resolved volume x transport',
+  file_base                     = '../hst_day-jpn/hs_Soya',
+  interval_step                 = 480,
+  operator                      = 'sum_3d',
+  suffix                        = 'day',
+  horz_range%ifirst             = 830,
+  horz_range%ilast              = 830,
+  horz_range%jfirst             = 1272,
+  horz_range%jlast              = 1298,
+  grads%xdef                    = '1 LEVELS 0.00'
+  grads%ydef                    = '1 LEVELS 0.00'
+  grads%zdef                    = '1 LEVELS 0.00'
+  factor                        = 1.d-12,
+  unit                          = 'Sv'
+  standard_name                 = 'Soya Strait volume tranposrt (eastward)',
+  short_name                    = 'soya',
+/
+&nml_history
+  name                          = 'resolved volume x transport',
+  file_base                     = '../hst_day-jpn/hs_Tsushima_w',
+  interval_step                 = 480,
+  operator                      = 'sum_3d',
+  suffix                        = 'day',
+  horz_range%ifirst             = 409,
+  horz_range%ilast              = 409,
+  horz_range%jfirst             = 733,
+  horz_range%jlast              = 770,
+  grads%xdef                    = '1 LEVELS 0.00'
+  grads%ydef                    = '1 LEVELS 0.00'
+  grads%zdef                    = '1 LEVELS 0.00'
+  factor                        = 1.d-12,
+  unit                          = 'Sv'
+  standard_name                 = 'Tsushima Strait (west) volume tranposrt (eastward)',
+  short_name                    = 'Tsushima_w',
+/
+&nml_history
+  name                          = 'resolved volume y transport',
+  file_base                     = '../hst_day-jpn/hs_Tsushima_e',
+  interval_step                 = 480,
+  operator                      = 'sum_3d',
+  suffix                        = 'day',
+  horz_range%ifirst             = 411,
+  horz_range%ilast              = 462,
+  horz_range%jfirst             = 720,
+  horz_range%jlast              = 720,
+  grads%xdef                    = '1 LEVELS 0.00'
+  grads%ydef                    = '1 LEVELS 0.00'
+  grads%zdef                    = '1 LEVELS 0.00'
+  factor                        = 1.d-12,
+  unit                          = 'Sv'
+  standard_name                 = 'Tsushima Strait (east) volume tranposrt (eastward)',
+  short_name                    = 'Tsushima_e',
+/
+&nml_history
+  name                          = 'resolved volume y transport',
+  file_base                     = '../hst_day-jpn/hs_Mamiya',
+  interval_step                 = 480,
+  operator                      = 'sum_3d',
+  suffix                        = 'day',
+  horz_range%ifirst             = 807,
+  horz_range%ilast              = 816,
+  horz_range%jfirst             = 1600,
+  horz_range%jlast              = 1600,
+  grads%xdef                    = '1 LEVELS 0.00'
+  grads%ydef                    = '1 LEVELS 0.00'
+  grads%zdef                    = '1 LEVELS 0.00'
+  factor                        = 1.d-12,
+  unit                          = 'Sv'
+  standard_name                 = 'Mamiya Strait volume tranposrt (northward)',
+  short_name                    = 'Mamiya',
+/
+

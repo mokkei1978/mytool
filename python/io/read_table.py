@@ -11,5 +11,6 @@ with open('rmse.txt','r') as f:
 #            print(d)
             d2.append(d)
         line = f.readline()
+#        print(type(line),line)
 
 print(d2)
