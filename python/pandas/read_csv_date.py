@@ -1,7 +1,5 @@
-"""
-時系列CSVファイルの処理
-https://note.nkmk.me/python-pandas-time-series-multiindex/
-"""
+"""時刻インデックスCSVファイルの読み取り、処理"""
+# https://note.nkmk.me/python-pandas-time-series-multiindex/
 
 import pandas as pd
 
