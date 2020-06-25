@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime
 from model_rect import *
+import sys
 
 ## CSV粒子データの読み取り
 names = ['id','x','y','z','cat','prop1','day','t','s','sigma','prop2','prop3']
@@ -35,9 +36,9 @@ df2 = df2[df2.index <= datetime.date(1901,1,5)]
 #print(len(df2.index))
 
 ## 流速データを読み込み、粒子位置の値を保持する
-im = 62
-jm = 52
-km = 10
+im = model.im
+jm = model.jm
+km = model.km
 xm = len(df2.index)
 dsec = np.empty((km,xm))
 for n in range(xm):
@@ -48,22 +49,15 @@ for n in range(xm):
     # https://note.nkmk.me/python-pandas-at-iat-loc-iloc/
     dsec[:,n] = d[:,j,i]
 
-## 描画の準備
-dplot = df2['depth']
-depth_m = [10.,35.,75.,150.,300.,500.,800.,1500.,3000.,5000.]
-ix = pd.date_range('1/1/1901',periods=xm,freq="D")
-#print(ix)
-#import sys
-#sys.exit()
-
 ## 描画
 fig, ax = plt.subplots()
-ax.plot( dplot )
-im = ax.contourf( ix, depth_m, dsec, cmap="seismic", levels=20, vmin=-0.7, vmax=0.7 )
+ax.plot( df2['depth'] )
+im = ax.contourf( df2.index, model.depth_m, dsec, cmap="seismic", levels=20, vmin=-0.7, vmax=0.7 )
+# df2.index (date) can be used for x-axis
 ax.set_title('u profile [cm/s] at particle #'+str(iid)+' (blue line)')
 ax.set_xlabel('date')
 ax.set_ylabel('depth[m]')
-ax.set_ylim( depth_m[int(df2['z'].max())+1],0.)
+ax.set_ylim( model.depth_m[int(df2['z'].max())+1],0.)
 ax.xaxis.set_major_locator(mdates.DayLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%m/%d'))
 fig.colorbar(im)
