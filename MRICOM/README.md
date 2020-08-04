@@ -4,7 +4,7 @@
   1. Redmine ロードマップの変更、追加
   2. リリース・ノートの文案の作成
   3. tag_mricom.sh
-  4. git push github master, 4_4, タグ
+  4. git push github master, 4_6, タグ
   5. GitHubリリースの作成
       https://github.com/mri-ocean/MRICOM/releases
   6. scp MRICOM-[version]-[date].tgz ocpublic@front:~/MRICOM/
@@ -13,7 +13,7 @@
 
 ### MXE タグ打ち
 
-  1. Docker で MXE の単体テスト (/root/MXE/test.sh)
+  1. Docker で MXE の単体テスト (~/test.sh)
   2. 必要があれば修正作業
   3. Redmine 棚卸し、ロードマップの追加
   4. リリース・ノートの文案の作成
@@ -31,6 +31,8 @@
   7. GitHubリリースの作成
 
 ### webページ更新
+
+../wiki/ で作業
 
 ### JPN タグ打ち
 

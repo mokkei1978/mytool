@@ -1,14 +1,14 @@
-MRI.COM ver.@version@ のリリース
+MRI.COM v@version@ のリリース
 
 
-MRI.COM ver.4.4, 4.5を更新しました。
+MRI.COM ver.4.6, 4.7を更新しました。
 
-更新内容は、"GitHub":https://github.com/mri-ocean/MRICOM/releases/tag/MRICOM-@version_tag@-@date@ (登録者のみ閲覧可能) または、"Redmineロードマップ":http://jksv-pj.npd.naps.kishou.go.jp/redmine/ocean/versions/@roadmap@ を参照してください。
+更新内容は、"GitHub":https://github.com/mri-ocean/MRICOM/releases/tag/MRICOM-@version_tag@-@date@ (登録者のみ閲覧可能) または、Redmineロードマップ version#@roadmap@ を参照してください。
 
 ソースコードは以下から取得できます。
 
 * "GitHub":https://github.com/mri-ocean/MRICOM/ (zip,tarもあり)
-* git: http://jksv-pj.npd.naps.kishou.go.jp/git_repos/ocean/mricom タグ: MRICOM-@version_tag@-@date@
+* git: http://tk2-214-16786.vs.sakura.ne.jp/git_repos/ocean/mricom タグ: MRICOM-@version_tag@-@date@
 * tar ball: front:/home/ocpublic/MRICOM/MRICOM-@version_tag@-@date@.tgz
 
 
