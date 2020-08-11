@@ -30,8 +30,11 @@
 (add-to-list 'auto-mode-alist '("\\.F90\\'" . f90-mode))
 
 ;; C-x bでミニバッファにバッファ候補を表示
-(iswitchb-mode t)
-(iswitchb-default-keybindings)
+;(iswitchb-mode t)
+;(iswitchb-default-keybindings)
 
 ;; C-kで行全体を削除
 (setq kill-whole-line t)
+
+;; モードラインに列番号を表示
+(column-number-mode t)
