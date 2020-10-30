@@ -1,24 +1,26 @@
 
-FC_XXX = fx100
+FC_XXX = mri
 #FC_XXX = pgf90
+#FC_XXX = gfortran
 
-FC_fx100 = mpifrtpx
-FFLAGS_fx100 = -Kfast
-#FFLAGS_fx100 = -Kparallel,openmp,region_extension,ocl,parallel_fp_precision,preex,temparraystack,autoobjstack,noalias=s,ns,mfunc,prefetch_conditional,dalign -Koptmsg=2 -O3 -Q
+FC_mri = mpiifort
+FFLAGS_mri = -xCORE-AVX512 -O3 -V -qopt-report=1 -convert big_endian -mcmodel=large -assume byterecl
 
 FC_pgf90 = mpif90
 FFLAGS_pgf90 =
 
+FC_gfortran = mpif90
+FFLAGS_gfortran  = -mcmodel=large -O3 -fopenmp
+
 FC = $(FC_$(FC_XXX))
 FFLAGS = $(FFLAGS_$(FC_XXX))
 
-targets := write_mpiio write_root write_1d3mpi
-# read_mpiio read_root
+targets := write_1d3mpi
 
 all: $(targets)
 
 clean:
-	rm -f *~ $(targets) bench.sh.o* bench.sh.i* *.lst
+	rm -f *~ $(targets) bench.sh.o* bench.sh.i* *.lst *.optrpt
 
 %: %.F90
 	$(FC) $(FFLAGS) $^ -o $@
