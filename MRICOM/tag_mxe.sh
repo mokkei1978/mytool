@@ -3,7 +3,7 @@
 version=$1
 # e.g. 4_1_05
 
-cd ~/MXE
+cd ~/mxe
 
 tag_name="MXE-${version}"
 git co master
