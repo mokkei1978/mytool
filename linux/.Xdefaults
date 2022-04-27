@@ -1,12 +1,15 @@
+Emacs*Foreground:       gray90
+Emacs*Background:       gray30
+
 xterm*Foreground:       gray90
 xterm*Background:       gray30
 xterm*geometry:         72x30
 
 XTerm*faceName:            Dejavu Sans mono:style=book
-XTerm*faceNameDoublesize:  IPAGothic:style=Regular
+XTerm*faceNameDoublesize:  Noto Sans CJK JP:style=Regular
 XTerm*faceSize:            11
 
-Emacs*Foreground:       gray90
-Emacs*Background:       gray30
-Emacs*geometry:         80x35
+UXTerm*faceName:            Dejavu Sans mono:style=book
+UXTerm*faceNameDoublesize:  Noto Sans CJK JP:style=Regular
+UXTerm*faceSize:            11
 

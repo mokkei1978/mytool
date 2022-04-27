@@ -19,11 +19,19 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-(setq package-archives
-      '(("gnu"   . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org"   . "http://orgmode.org/elpa/")))
+(setq package-check-signature nil)
+(setq url-proxy-services '(("http" . "http://proxy.mri-jma.go.jp:8080")))
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
+
+
+;(setq url-proxy-services 
+;      '(("http" . "160.202.2.15:8080")
+;        ("https" . "160.202.2.15:8080")))
 
 (if (string-match "XEmacs\\|Lucid" emacs-version)
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -77,7 +85,7 @@
 (add-to-list 'auto-mode-alist '("\\.F90\\'" . f90-mode))
 
 ;; C-x bでミニバッファにバッファ候補を表示
-(iswitchb-mode t)
+;(iswitchb-mode t)
 ;(iswitchb-default-keybindings)
 
 ;; C-kで行全体を削除
@@ -88,3 +96,18 @@
 
 ;; モードラインに列番号を表示
 (column-number-mode t)
+
+;; xterm のマウスイベントを取得する
+(xterm-mouse-mode t)
+;; マウスホイールを取得する
+(mouse-wheel-mode t)
+;; ポインタの移動ではなくて画面をスクロールさせたい場合はこっち
+(global-set-key   [mouse-4] '(lambda () (interactive) (scroll-down 1)))
+(global-set-key   [mouse-5] '(lambda () (interactive) (scroll-up   1)))
+
+
+(defun reset-frame-parameter (frame)
+  (sleep-for 0.1)
+  (set-frame-parameter frame 'height 32))
+
+(add-hook 'after-make-frame-functions #'reset-frame-parameter)
