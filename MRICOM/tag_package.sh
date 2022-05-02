@@ -6,7 +6,7 @@ version=$1
 #cd ~/rectangle
 
 tag_name="${version}"
-git fetch MXE
+git fetch mxe
 git co master
 git tag ${version}
 git push origin ${version}

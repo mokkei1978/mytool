@@ -12,4 +12,7 @@ git tag ${tag_name}
 git push origin ${tag_name}
 git archive --format=tar --prefix=MRICOM/ HEAD | gzip > ~/${tag_name}.tgz
 
+git push github master
+git push github ${tag_name}
+
 exit 0

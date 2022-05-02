@@ -4,10 +4,10 @@
   1. Redmine ロードマップの変更、追加
   2. リリース・ノートの文案の作成
   3. tag_mricom.sh
-  4. git push github master, 4_6, タグ
+  4. git push origin/github [stable ver]
   5. GitHubリリースの作成
       https://github.com/mri-ocean/MRICOM/releases
-  6. scp MRICOM-[version]-[date].tgz ocpublic@front:~/MRICOM/
+  6. scp MRICOM-[version]-[date].tgz ocpublic@front.i.mri-jma.go.jp:~/MRICOM/
   7. make_redmine_news.sh
   8. make_mail.sh  mricom@mri-jma.go.jp に投稿
 
