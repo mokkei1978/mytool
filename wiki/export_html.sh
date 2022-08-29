@@ -23,8 +23,8 @@ for file in ${files}; do
 
   file=${file#./}
   file=${file%.txt}
-  file=${file//\//:}
-
+  file=`echo ${file} | sed -e "s%/%:%g"`
+  #file=${file//\//:} - fail at oceansv. why?
   case ${file} in
   *%*) ;;
   *)
@@ -44,7 +44,7 @@ sed -i -e '/wikilink/s@\"\#\([^ ]*\)@\#\1\"@g' html/*.html
 
 #- Change link rel
 sed -i "/<link rel=/d" html/*.html
-sed -i -e '12i <link rel="stylesheet" type="text/css" href="standard.css">' html/*.html
+sed -i -e '13i <link rel="stylesheet" type="text/css" href="standard.css">' html/*.html
 sed -i -e '20i <div class="level1"><a href="index.html">MRI.COM</a></div>' html/*.html
 
 #- Remove ":"
@@ -52,7 +52,9 @@ cd html
 files=`ls .`
 for file in ${files}; do
   sed -i -e "/wikilink/s/\:/_/g" -e "s/http_/http\:/g" -e "s/xml_lang/xml:lang/g" ${file}
-  mv ${file} ${file//\:/_} || :
+  file2=`echo ${file} | sed -e "s%:%_%g"`
+  mv ${file} ${file2} || :
+  #mv ${file} ${file//\:/_} || :
 done
 
 ln -s ${dir}_start.html index.html
@@ -61,8 +63,6 @@ cp ${current_dir}/link_icon.gif .
 cd ..
 #zip html.zip html/*
 
-echo "Make http://ogsv009.mri-jma.go.jp/~ksakamot/html/index.html"
-
-#rsync -a html/ sakamoto.k.mri-jma@dias-bs2.tkl.iis.u-tokyo.ac.jp:~/html/
+echo "Make http://oceansv.i.mri-jma.go.jp/~ksakamot/html/"
 
 exit 0
