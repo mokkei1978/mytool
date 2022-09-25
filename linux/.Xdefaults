@@ -2,7 +2,7 @@ Emacs*Foreground:       gray90
 Emacs*Background:       gray30
 
 xterm*Foreground:       gray90
-xterm*Background:       gray30
+xterm*Background:       gray10
 xterm*geometry:         72x30
 
 XTerm*faceName:            Dejavu Sans mono:style=book
