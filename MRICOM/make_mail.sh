@@ -16,6 +16,6 @@ fi
 
 
 sed -e "s/@version@/${version}/g" -e "s/@year@/${year}/g" -e "s/@month@/${month}/g" \
- -e "s/@version_wiki@/${version_wiki}/g" -e "s/@date_wiki@/${date_wiki}/g" -e "s/@news@/${news}/g" < mail.in
+  -e "s/@news@/${news}/g" < mail.in
 
 exit 0

@@ -24,3 +24,6 @@ export PS1="\[\e[1;35m\]\w>\[\e[00m\] "
 
 #- GrADS scrpit path
 export GASCRP="./libgs ./mylib"
+
+setxkbmap -layout jp
+#- to avoid US layout keyboard in xterm
