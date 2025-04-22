@@ -1,9 +1,12 @@
 [user]
-	name = ksakamot
-	email = ksakamot@mri-jma.go.jp
+	name = Kei Sakamoto
+	email = sakamoto.kei.6f@kyoto-u.ac.jp
 [core]
 	editor = emacs
 [alias]
 	co = checkout
 	st = status
 	br = branch
+        difs = diff --stat
+        tr = log --graph --pretty='format:%C(yellow)%h%Creset %Cred%d%Creset %s'
+
