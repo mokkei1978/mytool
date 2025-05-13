@@ -20,7 +20,7 @@
 ;; You may delete these explanatory comments.
 
 (setq package-check-signature nil)
-(setq url-proxy-services '(("http" . "http://proxy.mri-jma.go.jp:8080")))
+;(setq url-proxy-services '(("http" . "http://proxy.mri-jma.go.jp:8080")))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -68,7 +68,7 @@
 
 (setq inhibit-startup-message t)
 
-(set-default-font "-adobe-courier-medium-r-normal--17-120-100-100-m-100-iso8859-1")
+;(set-default-font "-adobe-courier-medium-r-normal--17-120-100-100-m-100-iso8859-1")
 
 
 ;; turn on font-lock mode
