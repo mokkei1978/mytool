@@ -19,31 +19,36 @@ Windows PC My Documents/2020/Python/ の描画サンプルで必要なものを�
   * test_example1.sh  - Fortran subroutine を Pythonから呼ぶ
 
 
-### file - ファイル操作
+### file/         - ファイル操作
 
-  * ls.py       - あるディレクトリ内のファイルを示す
-
-
-### func - 関数
-
-  * fibo.py     - フィボナッチ数列を返す関数
-  * ask_ok.py   - IOError のサンプル
+  * ls.py           - あるディレクトリ内のファイルを示す
 
 
-### interpolate - 補間
+### func/         - 関数
 
-  * interp2d.py - 2次元データの補間
-  * unst2d.py   - 2次元非構造データの補間
-
-
-### io - 入出力
-
-  * read_table.py - 表ファイルを1行ずつ読む
-  * write_csv.py  - CSVファイルを書く
+  * fibo.py         - フィボナッチ数列を返す関数
+  * ask_ok.py       - IOError のサンプル
 
 
-### package - パッケージ構成
+### interpolate/  - 補間
 
-### pandas
+  * interp2d.py     - 2次元データの補間
+  * unst2d.py       - 2次元非構造データの補間
+
+
+### io/           - 入出力
+
+  * read_table.py   - 表ファイルを1行ずつ読む
+  * write_csv.py    - CSVファイルを書く
+
+
+### package/      - パッケージ構成
+
+### pandas/
 
   * read_csv_date.py - 時刻インデックスCSVファイルの読み取り、処理
+
+
+### plot/         - 描画
+
+  * scatter.py      - binで平均したグラフ(標準偏差付き)
