@@ -1,3 +1,4 @@
+!## 線形近似した状態方程式 eos を提供する
 module linear_equation_of_state
 
   implicit none
@@ -27,6 +28,7 @@ end module linear_equation_of_state
 
 
 
+!## 近似していない非線形の状態方程式 eos を提供する
 module nonlinear_equation_of_state
   !     EQUATION OF STATE FOR SEAWATER AS A FUNCTION OF
   !     POTENTIAL TEMPERATURE, SALINITY, AND PRESSURE
